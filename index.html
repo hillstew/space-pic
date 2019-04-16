@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>spacePic</title>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <h3 class="text-center">spacePic</h3>
+      <p>{{ pictureOfDay.url }}</p>
+      <img :src="pictureOfDay.url" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
