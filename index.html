@@ -2,15 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>spacePic</title>
   </head>
   <body>
     <div class="container" id="app">
-      <h3 class="text-center">spacePic</h3>
-      <p>{{ pictureOfDay.url }}</p>
-      <img :src="pictureOfDay.url" />
+      <h2 class="text-center">spacePic</h2>
+      <div>
+        <button @click="previousDayPicture">Previous day</button>
+        <button @click="resetPicture">Todays picture</button>
+      </div>
+      <p>{{ picture.date }}</p>
+      <p>{{ picture.title }}</p>
+      <img v-if="picture.media_type === 'image'" :src="picture.url" />
+      <iframe v-if="picture.media_type === 'video'" :src="picture.url"></iframe>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
